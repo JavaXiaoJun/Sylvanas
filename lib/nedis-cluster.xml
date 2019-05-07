@@ -1,0 +1,28 @@
+<nedis>
+    <nodes>
+        <node host="XX.XX.XX.XX" port="8008" />
+    </nodes>
+    <client>
+        <readFrom>1</readFrom>
+        <optout>10000</optout>
+        <ioThreads>8</ioThreads>
+        <computationThreads>8</computationThreads>
+        <timeout>30</timeout>
+        <password></password>
+        <maxRedirects>5</maxRedirects>
+        <periodicRefreshEnabled>true</periodicRefreshEnabled>
+        <refreshPeriod>120</refreshPeriod>
+        <adaptiveRefreashTimeOut>30</adaptiveRefreashTimeOut>
+        <refreshTriggersReconnectAttempts>5</refreshTriggersReconnectAttempts>
+    </client>
+    <bytePool>
+        <lifo>true</lifo>
+        <maxActive>60</maxActive>
+        <maxIdle>30</maxIdle>
+        <maxWait>10000</maxWait>
+        <minEvictableIdleTimeMillis>100000</minEvictableIdleTimeMillis>
+        <minIdle>10</minIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+    </bytePool>
+</nedis>
