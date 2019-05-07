@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Searchs</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+		<link rel="stylesheet" href="../vender/bootstrap-3.3.7/css/bootstrap.css"/>
+		<link rel="stylesheet" href="../css/common.css"/>
+		<link rel="stylesheet" href="../css/monitor.css"/>
+		<link rel="stylesheet" href="../alertjs/alert.css"/>
+		<script type="text/javascript" src='../alertjs/alert.js'></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../vender/bootstrap-3.3.7/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/monitor/searchs.js"></script>
+	</head>
+	 <body>
+		<div class="body-container container-color scrollbar-div scrollbar-div-1">
+			<div class="data-container scrollbar">
+				<div class="detail-header">
+					<div class="cluster-name-container">
+						<font color="green" style="font-weight:bold">UP</font> <font style="margin-left:10px" id="serviceinfo"></font>
+					</div>
+				</div>
+
+				<div class="detail-container">
+					<div class="panel panel-default my-panel">
+						<div class="panel-heading">
+							<div>
+								<span><b>Search Cards : Service Instance Other Supported Actuator</b></span>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="normalPane">
+								<div class="normalTitle"><span><b>支持的 Actuator KeyWords</b></span></div>
+								<ul class="normalContent pagination pagination-support">
+									<li><span class="field">autoconfig</span></li>
+									<li><span class="field">configprops</span></li>
+									<li><span class="field">beans</span></li>
+									<li><span class="field">env</span></li>
+									<li><span class="field">mappings</span></li>
+									<li><span class="field">trace</span></li>
+									<li><span class="field">info</span></li>
+									<li><span class="field">health</span></li>
+									<li><span class="field">metrics</span></li>
+								</ul>
+						</div>
+					</div><!-- .panel -->
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="monitorModal">
+			<div class="modal-dialog" style="width:96%;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4><font id="title"> Title </font> <a class="close" id="closeModal">×</a></h4>
+					</div>
+					<div class="modal-body">
+						<pre id="content">
+                           <div>None</div>
+                        </pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	 </body>
+</html>

@@ -1,0 +1,55 @@
+server:
+  tomcat.uri-encoding: UTF-8
+  port: 8882
+
+spring:
+  application:
+    name: eureka-server
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+  datasource:
+    name: Sylvanas
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.16.50.209:3306/sylvanas?useUnicode=true&characterEncoding=utf-8&ssl=false
+    username: root
+    password: Newegg@1234
+
+mybatis:
+  mapper-locations: classpath*:mappers/*.xml
+  configuration:
+    # mysql: app_id ==> model: appId
+    mapUnderscoreToCamelCase: true
+
+http:
+  maxTotal: 10
+  defaultMaxPerRoute: 10
+  connectTimeout: 5000
+  connectionRequestTimeout: 5000
+  socketTimeout: 3000
+  staleConnectionCheckEnabled: true
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+    home-page-url:  http://${spring.cloud.client.ipAddress}:${server.port}
+    app-group-name: business
+    metadata-map:
+      zone: e4
+  server:
+    enable-self-preservation: true
+  client:
+    region: E4
+    availabilityZones:
+      E4: e4-url,e11-url
+      E11: e11-url,e4-url
+    register-with-eureka: true
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      e4-url: http://localhost:8882/eureka,http://localhost:8882/eureka
+      e11-url: http://localhost:8882/eureka,http://localhost:8882/eureka

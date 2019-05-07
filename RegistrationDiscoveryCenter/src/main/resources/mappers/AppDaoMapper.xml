@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.IAppDao">
+
+    <insert id="addApp" parameterType="com.study.discovery.model.App">
+        insert into apps(name,type,team)
+        values(#{name},#{type},#{teamId})
+    </insert>
+
+    <delete id="deleteApp" parameterType="java.lang.String">
+        delete from apps where name = #{appName};
+    </delete>
+
+    <select id="getApp"  resultType="com.study.discovery.model.App">
+        SELECT
+            a.name as name,
+            a.type as type,
+            a.team as teamId,
+            c.collection_id as collectionId,
+            c.collected as collected
+        FROM
+            apps a
+        LEFT JOIN
+            collection c
+        ON
+            a.name = c.app_name
+        WHERE
+            a.name = #{appName}
+    </select>
+    <select id="getTeamIdByAppName"  resultType="com.study.discovery.model.App">
+        SELECT
+            team as teamId
+        FROM
+            apps
+        WHERE
+            name = #{appName}
+    </select>
+    <select id="getAppList"  resultType="com.study.discovery.model.App">
+        SELECT DISTINCT
+            a.name as name,
+            a.type as type,
+            a.team as teamId,
+            t.name as teamName,
+            c.collection_id as collectionId,
+            c.collected as collected
+        FROM
+            apps a LEFT JOIN team t ON a.team = t.id LEFT JOIN collection c ON a.name = c.app_name
+        <if test="teamIdList != null and teamIdList.size() > 0">
+            WHERE
+                a.team IN
+            <foreach collection="teamIdList" item="teamId" index="index" open="(" close=")" separator=",">
+                #{teamId}
+            </foreach>
+        </if>
+        ORDER BY
+            teamName
+        ASC
+    </select>
+
+    <select id="getAppCollectedList"  resultType="com.study.discovery.model.App">
+        SELECT DISTINCT
+            a.name as name,
+            a.type as type,
+            a.team as teamId,
+            t.name as teamName,
+            c.collection_id as collectionId,
+            c.collected as collected
+        FROM
+            apps a LEFT JOIN team t ON a.team = t.id LEFT JOIN collection c ON a.name = c.app_name
+        WHERE
+            c.collected = 1
+        <if test="teamIdList != null and teamIdList.size() > 0">
+            AND
+                a.team IN
+            <foreach collection="teamIdList" item="teamId" index="index" open="(" close=")" separator=",">
+                #{teamId}
+            </foreach>
+        </if>
+        ORDER BY
+            teamName
+        ASC
+    </select>
+
+    <select id="getAppCount">
+        SELECT COUNT(name)
+            FROM
+        apps
+    </select>
+</mapper>

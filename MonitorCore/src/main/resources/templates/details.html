@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Details</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+	<link rel="stylesheet" href="../vender/bootstrap-3.3.7/css/bootstrap.css"/>
+	<link rel="stylesheet" href="../css/common.css"/>
+	<link rel="stylesheet" href="../css/monitor.css"/>
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/monitor/details.js"></script>
+</head>
+<body>
+<div class="body-container container-color scrollbar-div scrollbar-div-1">
+	<div class="data-container scrollbar">
+		<div class="detail-header">
+			<div class="cluster-name-container">
+				<font color="green" style="font-weight:bold">UP</font> <font style="margin-left:10px" id="serviceinfo"></font>
+			</div>
+		</div>
+
+		<div class="detail-container">
+			<div class="panel panel-default my-panel">
+				<div class="panel-heading">
+					<div>
+						<span><b>Detail Card 1 : Service Instance Health JVM Memory Info</b></span>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="pie-charts-container">
+						<div class="body-wrapper">
+							<ul class="card-list">
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Health</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map">
+													<li class="one-key">
+														<div class="group">
+															Description
+														</div>
+														<div class="right single" id="description">
+														</div>
+													</li>
+													<li>
+														<div class="group">
+															DiscoveryComposite
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Description
+																</div>
+																<div class="group-right" id="discoveryComposite-description">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Services
+																</div>
+																<div class="group-right" id="services">
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<div class="group">
+															DiskSpace
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Status
+																</div>
+																<div  class="group-right">
+																	<font color="green" style="font-weight:bold" id="status"></font>
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Total
+																</div>
+																<div  class="group-right" id="total">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Free
+																</div>
+																<div class="group-right" id="free">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Threshold
+																</div>
+																<div class="group-right" id="threshold">
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															RefreshScope
+														</div>
+														<div class="right single">
+															<font style="font-weight:bold" id="refreshScope"></font>
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Hystrix
+														</div>
+														<div class="right single">
+															<font style="font-weight:bold" id="hystrix">UP</font>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">JVM</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map">
+													<li class="one-key">
+														<div class="group">
+															Uptime
+														</div>
+														<div class="right single" id="uptime">
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Systemload
+														</div>
+														<div class="right single" id="systemload">
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Available Processers
+														</div>
+														<div class="right single" id="processers">
+														</div>
+													</li>
+													<li>
+														<div class="group">
+															Classes
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Total
+																</div>
+																<div class="group-right" id="total_classes">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Current Load
+																</div>
+																<div class="group-right" id="current_classes">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	UnLoad
+																</div>
+																<div class="group-right" id="unload">
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<div class="group">
+															Threads
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Current
+																</div>
+																<div class="group-right" id="current_thread">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Total Started
+																</div>
+																<div class="group-right" id="total_start">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Daemon
+																</div>
+																<div class="group-right" id="daemon">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Peak
+																</div>
+																<div class="group-right" id="peak">
+																</div>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Memory</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map">
+													<li class="one-key">
+														<div class="group">
+														  <div id="memory">
+														    Memory
+														   </div>
+														   <div>
+															 <meter id="memory_meter" class="meter" low="30" high="80" max="100" optimum="0" value=""></meter>
+														   </div>
+											            </div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															<div id="heap_memory">
+																Heap Memory
+															</div>
+															<div>
+																<meter id="heap_memory_meter" class="meter" low="30" high="80" max="100" optimum="0" value=""></meter>
+															</div>
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Inital Heap
+														</div>
+														<div class="right single" id="inital_heap" >
+															0M
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Maximun Heap
+														</div>
+														<div class="right single" id="max_heap">
+															0M
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															<div id="nonheap_memory">
+																Non-Heap Memory
+															</div>
+															<div>
+																<meter class="meter" low="30" high="80" max="100" optimum="0" value="" id="nonheap_memory_meter"></meter>
+															</div>
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Inital Non-Heap
+														</div>
+														<div class="right single" id="inital_nonheap">
+															0M
+														</div>
+													</li>
+													<li class="one-key">
+														<div class="group">
+															Maximun Non-Heap
+														</div>
+														<div class="right single" id="max_nonheap">
+															0M
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- .panel -->
+
+			<div class="panel panel-default my-panel">
+				<div class="panel-heading">
+					<div>
+						<span><b>Detail Card 2 : Service Instance GC ServletContainer Info</b></span>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="pie-charts-container">
+						<div class="body-wrapper">
+							<ul class="card-list">
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Garbage Collection</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map">
+													<li>
+														<div class="group">
+															Ps_Scavenge
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Count
+																</div>
+																<div class="group-right" id="scavenge_count">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Time
+																</div>
+																<div class="group-right" id="scavenge_time">
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<div class="group">
+															MarkSweep
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Count
+																</div>
+																<div class="group-right" id="marksweep_count">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Time
+																</div>
+																<div class="group-right" id="marksweep_time">
+																</div>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Servlet Container (Only Tomcat Worked)</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map">
+													<li>
+														<div class="group">
+															Http Sessions
+														</div>
+														<ul class="value-map">
+															<li>
+																<div class="left">
+																	Active
+																</div>
+																<div class="group-right" id="active">
+																</div>
+															</li>
+															<li>
+																<div class="left">
+																	Maximun
+																</div>
+																<div class="group-right" id="maximun">
+																</div>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- .panel -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

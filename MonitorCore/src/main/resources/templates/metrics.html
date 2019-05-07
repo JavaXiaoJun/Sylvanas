@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Metrics</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+		<link rel="stylesheet" href="../vender/bootstrap-3.3.7/css/bootstrap.css"/>
+		<link rel="stylesheet" href="../css/common.css"/>
+		<link rel="stylesheet" href="../css/monitor.css"/>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../js/monitor/metrics.js"></script>
+	</head>
+	<body>
+	<div class="body-container container-color scrollbar-div scrollbar-div-1">
+		<div class="data-container scrollbar">
+			<div class="detail-header">
+				<div class="cluster-name-container">
+					<font color="green" style="font-weight:bold">UP</font> <font style="margin-left:10px" id="serviceinfo"></font>
+				</div>
+			</div>
+
+			<div class="detail-container">
+				<div class="panel panel-default my-panel">
+					<div class="panel-heading">
+						<div>
+							<span><b>Metrics Cards : Service Instance Gauge Counter Info </b></span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="pie-charts-container">
+							<div class="body-wrapper">
+								<ul class="card-list">
+									<li class="one-card">
+										<div class="card-wrapper">
+											<div class="card-head">
+												<b class="card-head-text">Gauge</b>
+											</div>
+											<div class="content-wrapper">
+												<div class="content">
+													<ul class="data-map" id="gauge">
+                                                        None
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="one-card">
+									 <div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Counter</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map" id="counter">
+													None
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div><!-- .panel -->
+
+
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

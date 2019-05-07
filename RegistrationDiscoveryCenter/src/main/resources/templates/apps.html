@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate" />
+    <meta HTTP-EQUIV="expires" CONTENT="0" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <title>Apps</title>
+    <link rel="stylesheet"  type="text/css"  href="../../tools/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../tools/bootstrap-multiselect/bootstrap-multiselect.css"/>
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/bootstrap-reset.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/style.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/common.css" />
+
+    <script  src="../../tools/jquery-3.3.1.min.js" ></script>
+    <script  src="../../tools/newegg/newegg.js" ></script>
+    <script  src="../../tools/bootstrap/js/bootstrap.js" ></script>
+    <script src="../../tools/layer/layer.js"></script>
+    <script  src="../../tools/bootstrap-multiselect/bootstrap-multiselect.js" ></script>
+    <script  src="../../app/apps.js" ></script>
+    <script  src="../../app/collection.js" ></script>
+
+</head>
+<body>
+<div class="body-container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-title space-between">
+                <div>Apps</div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="addApp()">
+                        <i class="icon-plus"></i>&nbsp;Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="baseTitle">
+            <div class="apps-title">Base</div>
+            <div id="baseCnt">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="serviceTitle">
+            <div class="apps-title">Service</div>
+            <div id="serviceCnt">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="appTitle">
+            <div class="apps-title">App</div>
+            <div id="appCnt">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add App</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group m-bot15">
+                        <span class="input-group-addon modal-span">Name</span>
+                        <input id="new_name" type="text" class="form-control modal-input" placeholder="name" />
+                    </div>
+                    <div class="input-group m-bot15">
+                        <span class="input-group-addon modal-span">Type</span>
+                        <select id="new_type" class="form-control">
+                            <option value="service">service</option>
+                            <option value="base">base</option>
+                            <option value="app">app</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon modal-span">Team</span>
+                        <select id="new_teams" class="form-control">
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeEdit" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveApp()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

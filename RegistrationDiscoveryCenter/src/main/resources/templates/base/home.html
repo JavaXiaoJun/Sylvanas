@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate" />
+    <meta HTTP-EQUIV="expires" CONTENT="0" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <title>Home</title>
+    <link rel="stylesheet"  type="text/css"  href="../../tools/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../tools/bootstrap-multiselect/bootstrap-multiselect.css"/>
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/bootstrap-reset.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/style.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/common.css" />
+
+    <script  src="../../tools/jquery-3.3.1.min.js" ></script>
+    <script  src="../../tools/newegg/newegg.js" ></script>
+    <script  src="../../tools/bootstrap/js/bootstrap.js" ></script>
+    <script src="../../tools/layer/layer.js"></script>
+    <script  src="../../tools/bootstrap-multiselect/bootstrap-multiselect.js" ></script>
+    <script  src="../../app/home.js" ></script>
+
+</head>
+<body>
+<div class="body-container">
+
+    <div id="total_statistic" class="row state-overview">
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol terques">
+                    <i class="icon-group"></i>
+                </div>
+                <div id="total_teams" class="value">
+                    <b><h1 id="teams" >0</h1></b>
+                    <p>Teams</p>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol green">
+                    <i class="icon-leaf"></i>
+                </div>
+                <div id="total_apps" class="value">
+                    <b><h1 id="apps" >0</h1></b>
+                    <p>Apps</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol blue">
+                    <i class="icon-puzzle-piece"></i>
+                </div>
+                <div id="total_servers" class="value">
+                    <b><h1 id="instances" >0</h1></b>
+                    <p>Instances</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol red">
+                    <i class="icon-bell-alt"></i>
+                </div>
+                <div id="system_news" class="value">
+                    <b><h1 id="news" >0</h1></b>
+                    <p>News</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="list-title">Activity</div>
+                    <div id="activity">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="list-title">Collections</div>
+                            <div id="collections">
+                                <div>
+                                    No collection yet.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-sm-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="list-title">News</div>
+                            <div id="newsList">
+                                No news.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

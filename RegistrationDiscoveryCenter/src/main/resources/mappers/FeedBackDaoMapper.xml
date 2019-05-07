@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.IFeedBackDao">
+
+    <insert id="addFeedBackMsg" parameterType="com.study.discovery.model.FeedBackMsg">
+        INSERT INTO
+            feedback(id,name,content,updateTime)
+        VALUES
+            (#{id}, #{name}, #{content}, #{updateTime})
+    </insert>
+
+    <update id="updateFeedBackMsg" parameterType="com.study.discovery.model.FeedBackMsg">
+        UPDATE
+            feedback
+        SET
+            name = #{name}, content = #{content}, updateTime = #{updateTime}
+        WHERE
+            id = #{id}
+    </update>
+
+    <delete id="deleteFeedBackMsg" parameterType="java.lang.String">
+        DELETE FROM
+            feedback
+        WHERE
+            id = #{id};
+    </delete>
+
+    <select id="getFeedBackMsgCount"  resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            feedback
+    </select>
+
+    <select id="getFeedBackMsgList"  parameterType="com.study.discovery.model.PageQuery" resultType="com.study.discovery.model.FeedBackMsg">
+        SELECT
+            id,
+            name,
+            content,
+            updateTime
+        FROM
+            feedback
+        ORDER BY
+            updateTime
+        DESC
+        LIMIT
+            #{limit},#{size}
+    </select>
+
+</mapper>

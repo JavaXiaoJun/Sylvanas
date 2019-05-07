@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.ITeamUserDao">
+
+    <select id="getTeamIdListByUserId" parameterType="java.lang.String" resultType="com.study.discovery.model.TeamUser">
+        SELECT
+            id,
+            team_id
+        FROM
+            team_user
+        WHERE
+            user_id = #{userId}
+    </select>
+
+    <select id="getUserByTeamId" parameterType="java.lang.String" resultType="com.newegg.ec.base.model.User">
+        SELECT
+            user.id as id,
+            username as name
+        FROM
+            team_user, user
+        WHERE
+            team_user.user_id = user.id
+        AND
+            team_id = #{teamId}
+    </select>
+
+    <insert id="addTeamUserBatch">
+        INSERT INTO
+            team_user (id, team_id, user_id)
+        VALUES
+        <foreach collection="teamUserList" item="teamUser" index= "index" separator=",">
+            (#{teamUser.id}, #{teamUser.teamId}, #{teamUser.userId})
+        </foreach>
+    </insert>
+
+    <delete id="deleteTeamUserBatch">
+        DELETE FROM
+            team_user
+        WHERE
+            team_id = #{teamId}
+        AND
+            user_id IN
+        <foreach collection="userIdList" item="userId" index="index" open="(" close=")" separator=",">
+            #{userId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteAllUserInTeam">
+        DELETE FROM
+            team_user
+        WHERE
+            team_id = #{teamId}
+    </delete>
+
+</mapper>

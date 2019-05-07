@@ -1,0 +1,21 @@
+server:
+  port: ${server_port:8887}
+
+spring:
+  application:
+    name: monitor-core
+
+customize:
+  monitor:
+     class: com.newegg.ec.core.business.actuator.MonitorDataCollection
+     
+management:
+    endpoints:
+       shutdown:
+         enabled: true
+       web:
+         base-path: /
+         exposure:
+            include: "*"
+       health:
+         show-details: always

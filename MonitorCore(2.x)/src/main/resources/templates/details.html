@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Details</title>
+	<!--<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />-->
+	<link rel="stylesheet" href="../vender/bootstrap-3.3.7/css/bootstrap.css"/>
+	<link rel="stylesheet" href="../css/common.css"/>
+	<link rel="stylesheet" href="../css/monitor.css"/>
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/monitor/details.js"></script>
+</head>
+<body>
+<div class="body-container container-color scrollbar-div scrollbar-div-1">
+	<div class="data-container scrollbar">
+		<div class="detail-header">
+			<div class="cluster-name-container">
+				<font color="green">UP</font> <font style="margin-left:10px" id="serviceinfo"></font>
+			</div>
+		</div>
+
+		<div class="detail-container">
+			<div class="panel panel-default my-panel">
+				<div class="panel-heading">
+					<div>
+						<span><b>Detail Card : Service Instance Metrics Info</b></span>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="pie-charts-container">
+						<div class="body-wrapper">
+							<ul class="card-list">
+								<li class="one-card">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Service Info</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="content">
+												<ul class="data-map" id="info">
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li class="many-cards">
+									<div class="card-wrapper">
+										<div class="card-head">
+											<b class="card-head-text">Metrics Details</b>
+										</div>
+										<div class="content-wrapper">
+											<div class="panel-body">
+												<div class="normalPane">
+													<div class="normalTitle"><span><b>支持的 Metrics KeyWords</b></span></div>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">http.server.requests</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">jvm.memory.used</span></li>
+														<li><span class="field">jvm.memory.committed</span></li>
+														<li><span class="field">jvm.memory.max</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">jvm.gc.memory.promoted</span></li>
+														<li><span class="field">jvm.gc.pause</span></li>
+														<li><span class="field">jvm.gc.memory.allocated</span></li>
+														<li><span class="field">jvm.gc.max.data.size</span></li>
+														<li><span class="field">jvm.gc.live.data.size</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">jvm.threads.daemon</span></li>
+														<li><span class="field">jvm.threads.live</span></li>
+														<li><span class="field">jvm.threads.peak</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">jvm.buffer.memory.used</span></li>
+														<li><span class="field">jvm.buffer.count</span></li>
+														<li><span class="field">jvm.buffer.total.capacity</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">jvm.classes.loaded</span></li>
+														<li><span class="field">jvm.classes.unloaded</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">tomcat.cache.hit</span></li>
+														<li><span class="field">tomcat.cache.access</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">tomcat.global.sent</span></li>
+														<li><span class="field">tomcat.global.request</span></li>
+														<li><span class="field">tomcat.global.received</span></li>
+														<li><span class="field">tomcat.global.error</span></li>
+														<li><span class="field">tomcat.global.request.max</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">tomcat.sessions.created</span></li>
+														<li><span class="field">tomcat.sessions.expired</span></li>
+														<li><span class="field">tomcat.sessions.rejected</span></li>
+														<li><span class="field">tomcat.sessions.active.current</span></li>
+														<li><span class="field">tomcat.sessions.alive.max</span></li>
+														<li><span class="field">tomcat.sessions.active.max</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">tomcat.servlet.request.max</span></li>
+														<li><span class="field">tomcat.servlet.request</span></li>
+														<li><span class="field">tomcat.servlet.error</span></li>
+													</ul>
+													<ul class="normalContent pagination pagination-support ul-list">
+														<li><span class="field">tomcat.threads.config.max</span></li>
+														<li><span class="field">tomcat.threads.current</span></li>
+														<li><span class="field">tomcat.threads.busy</span></li>
+													</ul>
+												</div>
+												<div class="normalPane" style="background: #f5f5f5;">
+														<div class="modal-header">
+															<h4><font id="title"> Title </font></h4>
+														</div>
+														<div class="modal-body">
+															<pre id="content" class="pre">
+															   <div></div>
+															</pre>
+														</div>
+												</div>
+											</div><!-- .panel -->
+										</div>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- .panel -->
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

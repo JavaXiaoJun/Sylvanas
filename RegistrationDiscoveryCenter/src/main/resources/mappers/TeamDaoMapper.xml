@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.ITeamDao">
+
+    <insert id="addTeam" parameterType="com.study.discovery.model.Team">
+        insert into team(id,name,description)
+        values(#{id},#{name},#{description})
+    </insert>
+
+    <update id="updateTeam" parameterType="com.study.discovery.model.Team">
+        update team
+        set name = #{name}
+        ,description = #{description}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTeam" parameterType="java.lang.String">
+        delete from team where id = #{teamId} and id not in (select teamid from team_user_rt);
+    </delete>
+
+    <select id="getTeamList"  resultType="com.study.discovery.model.Team">
+        select id as id,
+        name as name,
+        description as description
+        from team
+        order by name asc
+    </select>
+
+    <select id="getTeam"  parameterType="java.lang.String" resultType="com.study.discovery.model.Team">
+        select * from team where id = #{teamId}
+    </select>
+
+
+</mapper>

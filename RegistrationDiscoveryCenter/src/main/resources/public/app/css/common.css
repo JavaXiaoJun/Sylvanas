@@ -1,0 +1,318 @@
+html,body{
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #f1f2f7;
+}
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #ddd;
+}
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    border-bottom-width: 1px;
+}
+
+.my-table > thead > tr > th, .my-table > tbody > tr > td {
+    padding: 5px 10px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+a, a:hover{
+    text-decoration: none;
+}
+
+input {
+	 background-color:transparent;
+}
+
+.body-container {
+    height: 100%;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.background-white {
+    background-color: #FFFFFF;
+}
+
+.main-title {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c9cdd7;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.list-title {
+    line-height: 30px;
+    font-weight: bold;
+    color: #2a3542;
+}
+
+.green {
+    background-color: #a9d96c;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.font-bold {
+    font-weight: bold;
+}
+
+.activity-item, .collection-item, .news-item {
+     padding: 5px 0;
+     border-top: 1px solid #eee;
+ }
+
+.collection-item, .news-item {
+    padding: 10px 0;
+}
+
+.team-name, .node{
+    margin-left: 10px;
+    width: 80px;
+    word-break: break-word;
+}
+
+#add_btn {
+    display: flex;
+    align-items: center;
+}
+
+/* modal */
+.modal-title {
+    margin-left: 10px;
+}
+
+.input-group {
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-span {
+    width: 150px !important;
+}
+
+.modal-input {
+    width: 400px !important;
+}
+
+.modal-footer {
+    margin-right: 10px;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #00a8b3;
+    outline: 0;
+}
+
+.multiselect-container>li {
+    width: 400px;
+}
+
+/* modal end */
+
+/* app page */
+.apps-title {
+    padding-bottom: 8px;
+    margin: 0 15px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.app-name, .collection, .news-title{
+    cursor: pointer;
+}
+
+.news-title {
+    color: #01c3e4;
+}
+
+.collection {
+    color: #aaa;
+}
+
+.collected {
+    color: #39b5aa;
+}
+
+.app-item-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #39b5aa;
+    font-size: 14px;
+}
+
+.app-item-term {
+    margin-bottom: 5px;
+}
+
+.panel-body i {
+    margin-right: 5px;
+}
+
+/* app manager*/
+.app-detail-title font{
+    margin-right: 20px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+}
+
+.inline-flex {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instance-item {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.icon-green {
+    color: #41cac0;
+}
+.icon-red {
+    color: #ff6c60;
+}
+
+.status-icon{
+    margin-right: 10px;
+}
+
+.instance-term {
+    margin-left: 20px;
+}
+
+.table-head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.table-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+#data-container > tr > td, #instancesTable > thead > tr > th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#instancesTable > thead > tr > th {
+    border-bottom: 1px solid #f1f2f7;
+}
+
+#instancesTable {
+    border: 1px solid #eee;
+}
+
+.option-center, .th-center {
+    text-align: center;
+}
+
+.operation-btn {
+    margin-left:20px;
+    width:50px
+}
+
+.add-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* feedback*/
+.paging-wrapper {
+    padding: 0px 15px 15px 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.paging-wrapper input {
+    width: 80px;
+}
+
+.text-area {
+    min-height: 54px;
+}
+
+.interval {
+    margin: 0 10px;
+}
+
+/*layer*/
+body .danger .layui-layer-btn .layui-layer-btn0 {
+    border-color: #ff6c60 !important;
+    background-color: #ff6c60 !important;
+}
+
+body .success .layui-layer-btn .layui-layer-btn0 {
+    border-color: #39b5aa !important;
+    background-color: #39b5aa !important;
+}
+
+.news-container {
+    padding: 20px;
+}
+.update-time {
+    margin-bottom: 10px;
+}
+.news-content {
+    word-break: break-word;
+}
+
+/* team */
+.user-container {
+    padding: 15px 20px;
+    width: 300px;
+}
+
+.user-content input {
+    margin-right: 5px;
+}
+
+.save-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-item label{
+    display: flex;
+    font-weight: 400;
+}

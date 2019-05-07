@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.INewsDao">
+
+    <insert id="addNews" parameterType="com.study.discovery.model.News">
+        INSERT INTO
+            news(news_id, title, content, update_time)
+        VALUES
+            (#{newsId}, #{title}, #{content}, #{updateTime})
+    </insert>
+
+    <update id="updateNews" parameterType="com.study.discovery.model.News">
+        UPDATE
+            news
+        SET
+            title = #{title}, content = #{content}, update_time = #{updateTime}
+        WHERE
+            news_id = #{newsId}
+    </update>
+
+    <delete id="deleteNews" parameterType="java.lang.String">
+        DELETE FROM
+            news
+        WHERE
+            news_id = #{newsId};
+    </delete>
+
+    <select id="getNewsById"  resultType="com.study.discovery.model.News">
+        SELECT
+            *
+        FROM
+            news
+        WHERE
+            news_id = #{newsId}
+    </select>
+
+
+    <select id="getNewsList"  parameterType="com.study.discovery.model.PageQuery" resultType="com.study.discovery.model.News">
+        SELECT
+            news_id,
+            title,
+            content,
+            update_time
+        FROM
+            news
+        ORDER BY
+            update_time
+        DESC
+        LIMIT
+            #{limit}, #{size}
+    </select>
+
+    <select id="getRecentNewsList" resultType="com.study.discovery.model.News">
+        SELECT
+            news_id,
+            title,
+            update_time
+        FROM
+            news
+        WHERE
+            update_time >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+        ORDER BY
+            update_time
+        DESC
+    </select>
+
+    <select id="getNewsCount" resultType="java.lang.Integer">
+        SELECT COUNT(news_id)
+        FROM
+            news
+    </select>
+
+</mapper>

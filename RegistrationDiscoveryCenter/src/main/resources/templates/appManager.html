@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate" />
+    <meta HTTP-EQUIV="expires" CONTENT="0" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <title>Base</title>
+
+    <link rel="stylesheet"  type="text/css"  href="../../tools/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../tools/datatables/jquery.dataTables.min.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/bootstrap-reset.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/style.css" />
+    <link rel="stylesheet"  type="text/css"  href="../../app/css/common.css" />
+
+    <script  src="../../tools/jquery-3.3.1.min.js" ></script>
+    <script  src="../../tools/newegg/newegg.js" ></script>
+    <script  src="../../tools/bootstrap/js/bootstrap.js" ></script>
+    <script src="../../tools/datatables/jquery.dataTables.js"></script>
+    <script src="../../tools/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../../tools/layer/layer.js"></script>
+
+    <script  src="../../tools/common.js" ></script>
+    <script  src="../../app/appManager.js" ></script>
+    <script  src="../../app/collection.js" ></script>
+
+</head>
+<body>
+<div class="body-container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-title space-between">
+                <div id="navigation" class="app-detail-title inline-flex"></div>
+                <div>
+                    <button type="button" class="btn btn-danger btn-xs red" onclick="dropApp()">
+                        <i class="icon-trash"></i>&nbsp;Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="table-title">Instance List</div>
+                    <table id="instancesTable" class="display dataTable">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>App Name</th>
+                                <th>Host</th>
+                                <th>Local</th>
+                                <th>Switch Off</th>
+                                <th>Drop Instance</th>
+                                <th>Last Update Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-container">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>

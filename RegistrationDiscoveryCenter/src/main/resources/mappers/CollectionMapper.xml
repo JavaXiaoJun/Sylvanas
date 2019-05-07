@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.discovery.dao.mysql.ICollectionDao">
+
+    <select id="selectCollection" parameterType="java.lang.String" resultType="com.study.discovery.model.Collection">
+        SELECT
+            collection_id
+        FROM
+            collection
+        WHERE
+            app_name = #{appName}
+    </select>
+
+    <insert id="addCollection" parameterType="com.study.discovery.model.Collection">
+        INSERT INTO
+            collection (collection_id, team_id, app_name, collected)
+        VALUES
+            (#{collectionId},#{teamId}, #{appName}, #{collected})
+    </insert>
+
+    <delete id="deleteCollection">
+        DELETE FROM
+            collection
+        WHERE
+            collection_id = #{collectionId}
+    </delete>
+
+</mapper>
